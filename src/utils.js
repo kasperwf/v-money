@@ -58,7 +58,7 @@ function toStr (value) {
 }
 
 function setCursor (el, positionEnd, positionStart) {
-  positionStart = positionStart || positionEnd;
+  positionStart = (typeof positionStart !== 'undefined') ? positionStart : positionEnd;
   var setSelectionRange = function () { el.setSelectionRange(positionStart, positionEnd) }
   if (el === document.activeElement) {
     setSelectionRange()
