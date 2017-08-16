@@ -57,8 +57,9 @@ function toStr (value) {
   return value ? value.toString() : ''
 }
 
-function setCursor (el, position) {
-  var setSelectionRange = function () { el.setSelectionRange(position, position) }
+function setCursor (el, positionEnd, positionStart) {
+  positionStart = positionStart || positionEnd;
+  var setSelectionRange = function () { el.setSelectionRange(positionStart, positionEnd) }
   if (el === document.activeElement) {
     setSelectionRange()
     setTimeout(setSelectionRange, 1) // Android Fix

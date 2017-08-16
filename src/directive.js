@@ -26,7 +26,7 @@ export default function (el, binding) {
   }
 
   el.onfocus = function () {
-    setCursor(el, el.value.length - opt.suffix.length)
+    setCursor(el, el.value.length - opt.suffix.length, opt.prefix.length)
   }
 
   el.oninput()
